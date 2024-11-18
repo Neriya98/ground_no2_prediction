@@ -1,0 +1,32 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "gt_no2"
+version = "0.0.1"
+description = "The GeoAI ground-level NO2 estimation challenge will ask participants to develop ML models to estimate surface NO2 concentrations using only public remote sensing data as predictor variables. Participants will be provided with ground truth data from air quality monitoring stations and remote sensing data processed by Google Earth Engine (GEE). The challenge encourages participants to explore innovative approaches to NO2 monitoring and modelling, while emphasising simplicity, reproducibility, and transparency in their methodologies. Participants will need to test their models not only in general terms, but also spatially over the study area and temporally over the year, and be able to interpret the given results."
+authors = [
+  { name = "David Baruch AKPOVI" },
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License"
+]
+requires-python = "~=3.12.3"
+
+[tool.black]
+line-length = 99
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.venv
+)/
+'''
+
+[tool.ruff.lint.isort]
+known_first_party = ["gt_no2"]
+force_sort_within_sections = true
